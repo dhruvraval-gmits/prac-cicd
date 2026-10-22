@@ -1,0 +1,19 @@
+name: 01 - manual trigger workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: job1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Hello world"
+
+      - name: Show current directory
+        run: pwd
+
+      - name: Show runner operating system
+        run: uname -a
