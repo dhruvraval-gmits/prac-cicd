@@ -1,0 +1,26 @@
+name: 02-auto trigger workflow
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show trigger information
+        run: echo "An automatic workflow was triggered!"
+
+      - name: Show current event
+        run: echo "This workflow runs for push or pull request events."
+
+      - name: Verify runner
+        run: |
+          echo "Running on GitHub's Ubuntu runner"
+          uname -a
