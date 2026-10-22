@@ -1,0 +1,40 @@
+name: 03 - Jobs and Steps
+
+on:
+  # push:
+  #   branches:
+  #     - main
+
+  # pull_request:
+  #   branches:
+  #     - main
+
+  workflow_dispatch:
+
+jobs:
+  job-one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step1 Welcome
+        run: echo "Welcome brother"
+
+      - name: Step2 - Current directory
+        run: pwd
+
+      - name: Step3 - Os
+        run: uname -a
+
+  job-two:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Node js version
+        run: node --version
+
+      - name: Step2 - Npx Version
+        run: npx --version
+
+  job-three:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Task Complete
+        run: echo "Task Completed"
