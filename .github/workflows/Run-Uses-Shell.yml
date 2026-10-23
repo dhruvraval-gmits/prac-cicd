@@ -1,0 +1,32 @@
+name: 04 - Run Uses Shell
+
+on:
+  workflow_dispatch:
+
+jobs:
+  learn-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display repo
+        run: ls -la
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Display Node.js version
+        run: node --version
+
+      - name: Display npx version
+        run: npx --version
+
+      - name: Run Shell
+        shell: bash
+        run: |
+          echo "First command"
+          echo "Second command"
+          echo "Third command"
